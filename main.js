@@ -1,11 +1,11 @@
 import mqtt from "mqtt";
 
 const options = {
-  host: "7aca494c8dd94003b59fed341eed26d3.s2.eu.hivemq.cloud",
+  host: "",
   port: 8883,
-  protocol: "mqtts",
-  username: "mqttsangengon",
-  password: "mqttpassword123!!",
+  protocol: "",
+  username: "",
+  password: "!!",
 };
 
 // initialize the MQTT client
