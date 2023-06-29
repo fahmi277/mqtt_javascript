@@ -1,11 +1,11 @@
 import mqtt from "mqtt";
 
 const options = {
-  host: "",
+  host: "7aca494c8dd94003b59fed341eed26d3.s2.eu.hivemq.cloud",
   port: 8883,
-  protocol: "",
-  username: "",
-  password: "!!",
+  protocol: "mqtts",
+  username: "mqttsangengon",
+  password: "mqttpassword123!!",
 };
 
 // initialize the MQTT client
@@ -35,8 +35,16 @@ client.on("error", (error) => {
 });
 
 client.on("message", (topic, message) => {
+  const currentTime = new Date();
+  const timenow = currentTime.toLocaleTimeString("en-US", {
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  const time = `date ${timenow}`;
   // called each time a message is received
-  console.log("Received message:", topic, message.toString());
+  console.log(time, " : Received message:", topic, message.toString());
 });
 
 // subscribe to topic 'my/test/topic'
